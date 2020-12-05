@@ -2,15 +2,16 @@
 
 list_of_boarding_passes = open('input.txt').read().split('\n')
 
+
 def split_list(local_char, local_list):
     local_length = len(local_list)
     local_middle_index = local_length // 2
     local_lower_half = local_list[:local_middle_index]
     local_upper_half = local_list[local_middle_index:]
     if local_char in ('FL'):
-        return local_lower_half
+        return(local_lower_half)
     elif local_char in ('BR'):
-        return local_upper_half
+        return(local_upper_half)
 
 # Part One
 
