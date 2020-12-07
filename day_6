@@ -1,0 +1,16 @@
+# read input
+
+list_answers = open('input.txt').read().split('\n\n')
+
+answers_q1 = 0
+answers_q2 = 0
+
+for answer in list_answers:
+    # count unique chars
+    answers_q1 += len(set(''.join(answer.splitlines())))
+    # count unique chars present in all answers
+    people = list(map(set, answer.splitlines()))
+    answers_q2 += len(people[0].intersection(*people[1:]))
+
+print(answers_q1)
+print(answers_q2)
